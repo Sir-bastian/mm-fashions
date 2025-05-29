@@ -16,6 +16,8 @@ urlpatterns = [
     
     # Path for retrieving, updating, or deleting a specific product
     # Example: /api/categories/1/ (where 1 is the product's ID)
+    #Use of as_view() helps transform class_based_view into callable functions since
+    # we can not call classes as a views.
     path("products/", views.ProductList.as_view(), name="product-list"),
     path("products/<int:pk>/", views.ProductDetail.as_view(), name="product-detail"),
 ]
